@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  music_ripper_api:
+    container_name: music_ripper_api
+    restart: always
+    build: ./music_ripper_api
+    environment:
+      - ENV_TYPE=DEV
+      - PYTHONDONTWRITEBYTECODE=1
+    env_file: 
+      - .secrets.env
+    ports:
+      - 8000:80
+    volumes:
+      - ./music_ripper_api/src/:/src/
+      - /var/lib/plexmediaserver/Library/Music/:/output_dir/
+  
+  music_ripper_ui:
+    container_name: music_ripper_ui
+    build: ./music_ripper_ui
+    restart: always
+    env_file:
+      - ./music_ripper_ui/.env
+    ports:
+      - 8080:8080
+    volumes:
+      - ./music_ripper_ui/:/app/
+      - /app/node_modules

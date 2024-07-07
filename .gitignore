@@ -1,0 +1,4 @@
+.secrets.env
+/music_ripper_ui/.env
+/music_ripper_ui/package-lock.json
+/muisc_ripper_ui/node_modules
