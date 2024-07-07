@@ -22,6 +22,7 @@ async def api_download_playlist(url: str = Form(...), dependency=Depends(verify_
 
 @router.post('/login')
 def login(response: Response, username: str = Form(...), password: str = Form(...)):
+    print(f'Attempted login: Username: {username} Password: {password}')
     if username == os.environ['USERNAME'] and password == os.environ['PASSWORD']:
         global session_ids
         session_id = secrets.randbits(64)

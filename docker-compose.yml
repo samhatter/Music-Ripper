@@ -10,7 +10,7 @@ services:
     env_file: 
       - .secrets.env
     ports:
-      - 8000:80
+      - 4747:80
     volumes:
       - ./music_ripper_api/src/:/src/
       - /var/lib/plexmediaserver/Library/Music/:/output_dir/
@@ -22,7 +22,7 @@ services:
     env_file:
       - ./music_ripper_ui/.env
     ports:
-      - 8080:8080
+      - 4848:8080
     volumes:
       - ./music_ripper_ui/:/app/
       - /app/node_modules

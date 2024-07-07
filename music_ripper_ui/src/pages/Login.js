@@ -15,7 +15,6 @@ function Login() {
   const { setAuth } = useContext(AuthContext);
   const navigate = useNavigate();
   const url = process.env.REACT_APP_URL;
-  console.log(url);
 
 
   const handleLogin = async () => {
