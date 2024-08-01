@@ -6,7 +6,8 @@ To run just docker compose up, change the compose file to have more sensible env
 
 Include a .secrets.env in the root folder with a USERNAME and PASSWORD like so
 
-'''
+```
 USERNAME=username
 PASSWORD=password
-'''
+```
+
